@@ -12,8 +12,23 @@ Conference
 </div>
  
 ## Description   
-The main goal of the project is to develop a deep learning system which understands the contents of handwritten paragraphs. 
+The main goal of the project is to develop an end to end deep learning system which understands the contents of handwritten paragraphs.  
 - We will be using modern stack of PyTorch and PyTorch-Lightening
+
+## How to run
+This project requires `conda` for setting up the working environment.
+
+First, install dependencies
+```bash
+# clone project
+git clone https://github.com/gauravtanwar03/handwritten-text-recognizer-project.git
+
+cd handwritten-text-recognizer-project
+make conda-update
+conda activate text-recognizer
+make pip-tools
+```
+**Note:** add `export PYTHONPATH=.:$PYTHONPATH` to your `~/.bashrc` and run `source ~/.bashrc`
 
 <!-- 
 ## How to run   
