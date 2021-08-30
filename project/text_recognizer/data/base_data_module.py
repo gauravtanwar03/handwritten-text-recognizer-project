@@ -6,6 +6,7 @@ from typing import Tuple, Collection, Union, Optional, Dict
 import pytorch_lightning as pl
 from torch.utils.data import ConcatDataset, DataLoader
 
+from project.text_recognizer import util
 from project.text_recognizer.data.util import BaseDataset
 
 
@@ -49,7 +50,7 @@ class BaseDataModule(pl.LightningDataModule):
         self.args = vars(args) if args is not None else {}
         self.batch_size = self.args.get("batch_size", BATCH_SIZE)
         self.num_workers = self.args.get(
-            "num_workers",
+            "num_workers", NUM_WORKERS
         )
 
         self.on_gpu = isinstance(self.args.get("gpus", None), (str, int))
